@@ -230,8 +230,18 @@ public class PageFactory {
                 //存储段落和编码
                 strParagraph = new String(parabuffer, mCharset);
                 // 段落中的换行符去掉，绘制的时候再换行
-                strParagraph = strParagraph.replaceAll("\r\n", "  ")
-                        .replaceAll("\n", " ");
+                strParagraph = strParagraph.replaceAll("\r\n", "  ").replaceAll("\n", " ");
+                /**
+                 * text表示我们的字符串；
+                 * start表示从第几个字符串开始测量；
+                 * end表示从测量到第几个字符串为止；
+                 * measureForwards表示向前还是向后测量；
+                 * maxWidth表示一个给定的最大宽度在这个宽度内能测量出几个字符；
+                 * measuredWidth为一个可选项，可以为空，不为空时返回真实的测量值
+                 * public int breakText (String text, boolean measureForwards, float maxWidth, float[] measuredWidth)
+                 * public int breakText (char[] text, int index, int count, float maxWidth, float[] measuredWidth)
+                 * public int breakText (CharSequence text, int start, int end, boolean measureForwards, float maxWidth, float[] measuredWidth)
+                 */
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
